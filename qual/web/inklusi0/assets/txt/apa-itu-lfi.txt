@@ -1,0 +1,10 @@
+LFI adalah singkatan dari "Local File Inclusion" (Inklusi Berkas Lokal). 
+Ini adalah jenis serangan keamanan yang terjadi ketika aplikasi web memungkinkan 
+pengguna untuk memasukkan jalur file lokal ke dalam permintaan yang kemudian diolah 
+oleh server web. LFI memungkinkan penyerang untuk mengakses dan membaca file lokal pada server,
+ yang dapat mencakup file konfigurasi sensitif, data penting, atau bahkan kode sumber aplikasi.
+
+Serangan LFI umumnya terjadi ketika aplikasi web tidak memvalidasi atau memfilter masukan pengguna 
+dengan benar sebelum menggunakannya dalam permintaan untuk membuka atau membaca file lokal. 
+Hal ini dapat memungkinkan penyerang untuk mencoba menjalankan kode berbahaya melalui pengiriman 
+jalur file yang merujuk ke skrip PHP atau file yang bisa dieksekusi.

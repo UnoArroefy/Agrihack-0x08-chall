@@ -1,0 +1,18 @@
+Untuk melindungi aplikasi web dari serangan LFI, Anda harus:
+
+1. Validasi Input: Selalu validasi dan periksa masukan pengguna dengan cermat sebelum digunakan dalam permintaan. 
+Pastikan masukan tidak berisi karakter yang dapat dimanfaatkan, seperti karakter "/../" atau "../" yang dapat 
+digunakan untuk mengakses direktori di luar yang diizinkan.
+
+2. Gunakan Whitelist: Batasi akses hanya ke file yang seharusnya diakses oleh aplikasi. Ini dapat dilakukan dengan 
+mengkonfigurasi penggunaan whitelist jalur file yang diizinkan.
+
+3. Gunakan Keamanan Server: Konfigurasi server web Anda untuk membatasi akses langsung ke file sistem, terutama 
+file konfigurasi yang sensitif. Pastikan juga bahwa konfigurasi server Anda telah mematikan fitur LFI.
+
+4. Gunakan Keamanan Aplikasi: Implementasikan mekanisme keamanan seperti Web Application Firewall (WAF) 
+untuk mendeteksi dan mencegah serangan LFI.
+
+Selalu penting untuk mengidentifikasi dan mengatasi potensi kerentanan LFI dalam aplikasi web Anda, 
+karena serangan semacam ini dapat menyebabkan akses ilegal ke data sensitif dan dapat mengancam integritas 
+dan keamanan sistem Anda.
