@@ -1,0 +1,7 @@
+version: '3'
+services:
+  python:
+    build: .
+    ports:
+      - 20000:5000
+    privileged: true
