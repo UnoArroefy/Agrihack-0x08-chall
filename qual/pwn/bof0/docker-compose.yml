@@ -1,0 +1,10 @@
+version: '3'
+services:
+  pwn:
+    container_name: bof0
+    network_mode: bridge
+    restart: always
+    build: .
+    ports:
+      - "30000:8000"
+    read_only: True
