@@ -1,1 +1,3 @@
 my eyes can't catch the words because it's so fast.
+
+flag = agrihack{Qu1t3_HIdD3n_R1gHt?}
