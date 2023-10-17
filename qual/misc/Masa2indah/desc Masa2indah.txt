@@ -1,0 +1,10 @@
+Teringat rasanya kenangan saat masa" SMA. Tapi saya pernah SMA dimana ya?
+
+additional info = flag adalah sebuah nama jalan dimana sekolah berada.  semua huruf adalah lowercase.
+
+example : nama jalan Jl. Otto Iskandar
+	  flag = agrihack{otto_iskandar}
+
+
+
+Flag = agrihack{teuku_cik_ditiro} 
