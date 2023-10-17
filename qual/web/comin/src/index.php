@@ -10,6 +10,12 @@
         <div class="p-5 mb-4 rounded-3">
                 <div class="container-fluid py-5">
                         <h1>Send your IP</h1>
+                        <pre>
+                                <p>The "check IP with ping" service allows users to input an IP address and performs a ping operation on that address. 
+It sends several network packets to the specified IP and waits for a response. The service then displays the results of 
+the ping operation, including information on the number of packets transmitted and received. Based on the results, it provides feedback, 
+such as whether the IP is responsive or not. This service is commonly used to test the reachability and responsiveness of a given IP address, making it useful for network troubleshooting and diagnostics.</p>
+                        </pre>
                         <form method="POST" action="index.php">
                         <div class="input-group mb-3">
                                 <input type="text" name="ip" class="form-control col-4" placeholder="8.8.8.8">
