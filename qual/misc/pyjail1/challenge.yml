@@ -36,6 +36,9 @@ tags:
 files:
     - ./chall.py
 
+requirements:
+    - "pyjail0"
+
 # The state of the challenge.
 # This is visible by default. It takes two values: hidden, visible.
 state: hidden
