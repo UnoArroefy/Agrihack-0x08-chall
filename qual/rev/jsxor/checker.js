@@ -42,8 +42,6 @@ async function jsxor() {
             alert(`Wrong brog`);
         }
     }
-    console.log(flag, decrypt);
-
 }
 
 jsxor()
