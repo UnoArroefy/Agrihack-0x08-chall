@@ -1,0 +1,9 @@
+submit the flag with this format
+
+`agrihack{$ebx_$eax_$edi}`
+
+Note : 
+- $ represent value inside the register, if eax contain value of 120 then $eax is 120
+- value before program prepare to call exit syscall
+
+e.g : `agrihack{1000_100_10}`
