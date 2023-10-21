@@ -31,7 +31,7 @@ async function jsxor() {
         }
 
         for (const e in enc) {
-            if (dec.e != enc.e ){
+            if (dec[e] != enc[e] ){
                 check = false;
             }
         }
