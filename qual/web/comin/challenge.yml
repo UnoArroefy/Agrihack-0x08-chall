@@ -16,6 +16,10 @@ extra:
     decay: 20
     minimum: 100
 
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+connection_info: http://34.101.135.101:15004
+
+
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
 # Can be removed if unused
