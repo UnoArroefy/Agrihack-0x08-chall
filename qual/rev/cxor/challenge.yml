@@ -8,7 +8,8 @@ category: Reverse Engineering
 description: |
     **Author**: `yqroo`
 
-    basic reverse engineering
+    it's not as easy as the other chall, but still consider easy category
+    first time seeing a stripped binary huh? and some weird value, wait what?? where is the value??.
 value: 0
 type: dynamic
 extra:
