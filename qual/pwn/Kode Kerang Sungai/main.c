@@ -19,10 +19,10 @@ void init(){
 
 int main(int argc, char** argv){
     init();
-    char buffer[64];
+    char buffer[0x64];
 
     printf("Bahasa Kerang!!\n>");
-    read(0, buffer, 64);
+    read(0, buffer, 0x64);
 
     void (*shell)() = &buffer;
     shell();
