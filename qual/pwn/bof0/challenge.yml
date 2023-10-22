@@ -2,7 +2,7 @@
 # other tools to install and deploy your challenge.
 
 # Required sections
-name: "bof1"
+name: "bof0"
 author: "yqroo"
 category: PWN
 description: |
@@ -16,7 +16,7 @@ extra:
     decay: 20
     minimum: 100
 
-connection_info: nc 34.101.135.101 30000
+connection_info: nc 34.101.135.101 19000
 
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
