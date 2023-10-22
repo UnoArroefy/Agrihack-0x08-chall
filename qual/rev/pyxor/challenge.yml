@@ -8,7 +8,7 @@ category: Reverse Engineering
 description: |
     **Author**: `yqroo`
 
-    xor in python
+    xor in python, but it's actually pyc
 value: 0
 type: dynamic
 extra:
@@ -33,7 +33,7 @@ tags:
 # Provide paths to files from the same directory that this file is in
 # Accepts strings
 files:
-    - ./chall.py
+    - ./chall.pyc
 
 # The state of the challenge.
 # This is visible by default. It takes two values: hidden, visible.
