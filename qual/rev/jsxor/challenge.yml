@@ -16,7 +16,7 @@ extra:
     decay: 20
     minimum: 100
 
-connection_info: 34.101.135.101:18000
+connection_info: http://34.101.135.101:18000
 
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
