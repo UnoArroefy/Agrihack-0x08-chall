@@ -1,0 +1,10 @@
+version: '3'
+services:
+  pwn:
+    container_name: bilbul
+    network_mode: bridge
+    restart: always
+    build: .
+    ports:
+      - "19004:8000"
+    read_only: True
