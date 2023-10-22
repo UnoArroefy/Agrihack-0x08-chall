@@ -1,0 +1,9 @@
+version: '3'
+services:
+  rev:
+    container_name: jsxor
+    network_mode: bridge
+    restart: always
+    build: .
+    ports:
+      - "18000:80"
