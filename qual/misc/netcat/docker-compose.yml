@@ -1,11 +1,11 @@
 version: '3'
 services:
   misc:
-    container_name: pwntools0
+    container_name: netcat
     network_mode: bridge
     restart: always
     build: .
     ports:
-      - "20003:5000"
+      - "20004:5000"
     privileged: true
     read_only: True
