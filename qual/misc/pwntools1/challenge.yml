@@ -2,15 +2,13 @@
 # other tools to install and deploy your challenge.
 
 # Required sections
-name: "binseria2"
+name: "pwntools0"
 author: "yqroo"
 category: MISC
 description: |
     **Author**: `yqroo`
 
-    bin bin apa yang menggemaskan?? binatang
-
-    flag adalah hadiah dari mode hard
+    Average pwntools game
 value: 0
 type: dynamic
 extra:
@@ -18,19 +16,19 @@ extra:
     decay: 20
     minimum: 100
 
-connection_info: nc 34.101.135.101 20005
+connection_info: nc 34.101.135.101 20006
 
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
 # Can be removed if unused
 # Accepts strings or dictionaries
 flags:
-    - agrihack{pwntools_really_helps_me_ORZzz}
+    - agrihack{triangle_L0v3_is_sometim3s_compl1cat3d}
 
-
-requirements:
-    - "binseria"
-
+# Tags are used to classify your challenge with topics. You should provide at
+# least one.
+# Can be removed if unused
+# Accepts strings
 tags:
     - pwntools
 

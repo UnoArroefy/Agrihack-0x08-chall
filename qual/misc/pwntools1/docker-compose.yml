@@ -1,0 +1,11 @@
+version: '3'
+services:
+  misc:
+    container_name: pwntools1
+    network_mode: bridge
+    restart: always
+    build: .
+    ports:
+      - "20006:5000"
+    privileged: true
+    read_only: True
