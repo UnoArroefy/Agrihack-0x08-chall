@@ -1,3 +1,0 @@
-Bagaimana cara mentransmisikan gambar dengan gelombang radio?
-
-flag = agrihack{N0w_Y0u_c4N_uS3_5STv} 
