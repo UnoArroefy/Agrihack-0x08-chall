@@ -2,7 +2,7 @@
 # other tools to install and deploy your challenge.
 
 # Required sections
-name: "rot13"
+name: "ROT13"
 author: "yqroo"
 category: Cryptography
 description: |

@@ -2,13 +2,15 @@
 # other tools to install and deploy your challenge.
 
 # Required sections
-name: "Base32"
+name: "binseria"
 author: "yqroo"
-category: Cryptography
+category: MISC
 description: |
     **Author**: `yqroo`
 
-    MFTXE2LIMFRWW63OMFUF62LUOVPWI2LBL5RWC4TBL5SGKY3PMRSV6YTBONSTGMS7OBSXE3DVL5SGS2LOM5QXIX3KOVTWCX3CMVXHI5LLL5SGC3S7MNUXE2LOPFQX2===
+    bin bin apa yang bersinar?? bintang
+
+    flag adalah hadiah dari mode easy
 value: 0
 type: dynamic
 extra:
@@ -16,19 +18,15 @@ extra:
     decay: 20
     minimum: 100
 
+connection_info: nc 34.101.135.101 20005
+
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
 # Can be removed if unused
 # Accepts strings or dictionaries
 flags:
-    - agrihack{nah_itu_dia_cara_decode_base32_perlu_diingat_juga_bentuk_dan_cirinya}
+    - agrihack{binary_search_made_easy}
 
-# Tags are used to classify your challenge with topics. You should provide at
-# least one.
-# Can be removed if unused
-# Accepts strings
-tags:
-    - basic
 
 # The state of the challenge.
 # This is visible by default. It takes two values: hidden, visible.
