@@ -1,10 +1,10 @@
 version: '3'
 services:
   pwn:
-    container_name: bof1
+    container_name: bof2
     network_mode: bridge
     restart: always
     build: .
     ports:
-      - "19001:8000"
+      - "19005:8000"
     read_only: True
