@@ -1,0 +1,38 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Bad qr"
+author: "Burhanez"
+category: Misc
+description: |
+    **Author**: `Burhanez`
+
+    my eyes can't catch the words because it's so fast.
+
+value: 0
+type: dynamic
+extra:
+    initial: 500
+    decay: 20
+    minimum: 100
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+    - agrihack{Qu1t3_HIdD3n_R1gHt?}
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - ./sofast.gif
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
