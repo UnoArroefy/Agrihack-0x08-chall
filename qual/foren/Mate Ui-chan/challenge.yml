@@ -1,0 +1,38 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Mate Ui-chan"
+author: "Burhanez"
+category: Forensic
+description: |
+    **Author**: `Burhanez`
+
+    HhhWWwwaaawwh huhuhhuhuhu what happen to my ui-chan. i can't look at her picture anymore hwhaaaaaaawhwwwwww
+value: 0
+type: dynamic
+extra:
+    initial: 500
+    decay: 20
+    minimum: 100
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+    - agrihack{H3re_I5_y0ur_B3L0veD_UicH4n}
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - ./ui-chan
+
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
