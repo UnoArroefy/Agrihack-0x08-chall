@@ -1,3 +1,0 @@
-It suck when someone broke your qr. can you fix it for me?
-
-flag = agrihack{Qr4Zy_R1gHt?}
