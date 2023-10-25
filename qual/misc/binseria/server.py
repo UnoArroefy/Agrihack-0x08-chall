@@ -11,6 +11,7 @@ def binserEasy():
     b = 128
 
     for _ in range(7):
+        print((a+b)//2)
         try:
             inp = int(input(f"masukkan angka (1 - 128): "))
         except:
@@ -29,10 +30,10 @@ def binserEasy():
             rand = randint(0, 1)
             if rand:
                 print("kebesaran")
-                a = inp
+                b = inp
             else:
                 print("kekecilan")
-                b = inp
+                a = inp
 
 def binserHard():
     print("\033c", flush=True)
@@ -65,10 +66,10 @@ def binserHard():
             rand = randint(0, 1)
             if rand:
                 print("kebesaran")
-                a = inp
+                b = inp
             else:
                 print("kekecilan")
-                b = inp
+                a = inp
 
 def main():
     print("\033c", flush=True)
