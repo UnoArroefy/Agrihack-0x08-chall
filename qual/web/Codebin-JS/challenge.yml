@@ -11,9 +11,9 @@ description: |
     CodeBin is a mini pastebin-like web application that allows users to post and share their code snippets with others who have registered on the site. It provides a platform for developers to easily share and discover code examples, collaborate, and learn from each other. A hacker named Paul just found the website is having vulnerability that allow users to access the admin page. He told the developer about this but he don't want to tell the way. The developer hired a pentester to find out how to get access as admin to the page, help the developer to find out!
     Note: There is a vulnerability in the login where you are able to make something to be comes true.
 
-    Link: [link to the site]()
     Link: [Source code of index.js](https://pastebin.com/raw/Jv45423q)
 
+connection_info: http://34.101.135.101:15123
 
 
 value: 0
@@ -36,10 +36,6 @@ flags:
 # Accepts strings
 tags:
     - Web Exploitation
-# Provide paths to files from the same directory that this file is in
-# Accepts strings
-files:
-    - None
 
 # The state of the challenge.
 # This is visible by default. It takes two values: hidden, visible.
