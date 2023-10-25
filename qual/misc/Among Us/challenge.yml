@@ -8,8 +8,8 @@ category: OSINT
 description: |
     **Author**: ``Encrypted``
 
-Saya mendapatkan laporan adanya impostor dalam agrinfo, dari laporan tersebut dikabarkan dia tidak terdaftar dalam kemahasiswaan IPB. Dari berita yang beredar dia dikatakan ada di antara mahasiswa Ilmu Komputer. Dia berada di antara kita semua. Cari tahu apakah nama lengkap dia.
-**Format flag**: ``agrihack0x08{Nama_Lengkap_Orangnya}``
+    Saya mendapatkan laporan adanya impostor dalam agrinfo, dari laporan tersebut dikabarkan dia tidak terdaftar dalam kemahasiswaan IPB. Dari berita yang beredar dia dikatakan ada di antara mahasiswa Ilmu Komputer. Dia berada di antara kita semua. Cari tahu apakah nama lengkap dia.
+    **Format flag**: ``agrihack0x08{Nama_Lengkap_Orangnya}``
 
 
 
