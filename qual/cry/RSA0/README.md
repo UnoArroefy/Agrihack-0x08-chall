@@ -2,7 +2,8 @@
 
 ## Description
 
-Diketahui Bahwa n=p*q. Dapatkah Anda Menemukan p?
+Diketahui Bahwa n=p*q. 
+Dapatkah Anda Menemukan p?
 
 `nc <ip> 16001`
 
