@@ -1,0 +1,51 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Version Checker"
+author: "Encrypted"
+category: Reverse Engineering
+description: |
+    **Author**: `Encrypted`
+
+So my friend just downloaded an application but its outdated, it says version v2.0 required to use the app but my friend is too lazy to update the app, he asked me to bypass the version checker. I just noticed that the application was coded with C#, it should be easy to reverse a C# based application, but sadly when i tried to reverse it, the application is obfuscated and i couldnt see what is actually going on, but i found a little hint, the code shown as pseudocode. Help me analyze the code and bypass the version checker.
+
+![](https://cdn.discordapp.com/attachments/1025767334901727363/1165904674818379796/image.png?ex=65488c57&is=65361757&hm=1190e3e9c8b6a5366b8cca04a756dd2ce7d8267274bfb621fde703d9a51eb522&)
+
+Note: `matiin anti virusnya dulu, gak tau kenapa kedetek sebagai virus sehabis diobfuscate`
+
+
+
+value: 0
+type: dynamic
+extra:
+    initial: 500
+    decay: 20
+    minimum: 100
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+    - agrihack0x08{1nt3rC3pt_Th3_R3qu3sT_Br00000}
+
+# Tags are used to classify your challenge with topics. You should provide at
+# least one.
+# Can be removed if unused
+# Accepts strings
+tags:
+    - C#
+    - HTTP Debugging
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - ./BypassMe.rar
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

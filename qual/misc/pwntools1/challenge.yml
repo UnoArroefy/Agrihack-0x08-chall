@@ -2,7 +2,7 @@
 # other tools to install and deploy your challenge.
 
 # Required sections
-name: "pwntools0"
+name: "pwntools1"
 author: "yqroo"
 category: MISC
 description: |

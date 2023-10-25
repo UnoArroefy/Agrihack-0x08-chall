@@ -54,7 +54,7 @@ def main():
     input("Enter To Continue")
     print("\033c", flush=True)
     print(boss, flush=True)
-    print(f"{'Huh, wdym did you want to steal my fiona??': ^51}\n{'Stop Talking, Defeat me first kiddo': ^51}\n")
+    print(f"{'Huh, wdym? did you want to steal my fiona??': ^51}\n{'Stop Talking, Defeat me first kiddo': ^51}\n")
     input("Enter To Continue")
     print("\033c", flush=True)
     print(boss, flush=True)
