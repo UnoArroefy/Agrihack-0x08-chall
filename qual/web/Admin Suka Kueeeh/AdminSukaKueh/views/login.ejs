@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <p><%= error %></p>
+    <form method="post">
+      <p>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value="<%= typeof username != 'undefined' ? username : '' %>"
+        />
+      </p>
+      <p><input type="password" name="password" placeholder="Password" /></p>
+      <p><input type="submit" value="Login" /></p>
+    </form>
+    <p><a href="/register">Register</a></p>
+  </body>
+</html>
