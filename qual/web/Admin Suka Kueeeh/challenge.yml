@@ -11,7 +11,7 @@ description: |
   Aku baru aja belajar backend karena dosen ku menyuruh membuat sebuah web aplikasi maka saya membuat login system simpel.
   Btw aku sangat suka kueh, kalian juga suka kueh? Kalo suka kueh, kalian bisa mendapatkan flag dari aku.
 
-  Link: [link to the site]()
+connection_info: http://34.101.135.101:17123
 
 value: 0
 type: dynamic
