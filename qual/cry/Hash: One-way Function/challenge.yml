@@ -1,0 +1,38 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Hash: One-way Function"
+author: "k1nomi"
+category: Cryptography
+description: |
+    **Author**: `k1nomi`
+
+    Untuk challenge ini aku telah membuat banyak flag tapi bingung mau pilih yang mana. Yasudahlah, aku pilih random saja~. Dari value hash yang diberikan, bisakah kamu mengetahui flag mana yang kupilih??
+value: 0
+type: dynamic
+extra:
+    initial: 500
+    decay: 20
+    minimum: 100
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+    - agrihack{th3r3_1s_n0_w4y_b4ck}
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - ./flags.txt
+    - ./chall.py
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
