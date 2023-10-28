@@ -1,0 +1,71 @@
+/* Reset default margin and padding */
+body,
+h1,
+p,
+form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a dark background color for the body */
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Center content vertically and horizontally */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the main title */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Style paragraphs */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Style links */
+a {
+  color: #bb86fc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #6200ea;
+}
+
+/* Form input fields */
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Form submit button */
+input[type="submit"] {
+  background-color: #6200ea;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #bb86fc;
+}
