@@ -60,7 +60,7 @@ def main():
     print(boss, flush=True)
     print(f"{'Shreek gets really mad, so what more we can do': ^51}\n{'lets do it, lets fight (sorry for the storyline tho)': ^51}\n", flush=True)
     input("Enter To Continue")
-    boss_life = 999999999
+    boss_life = 2000
     boss_att = 99
     our_life = 100
     our_att = 1
