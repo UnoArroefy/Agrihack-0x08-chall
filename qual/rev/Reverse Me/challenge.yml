@@ -1,0 +1,45 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Reverse Me"
+author: "Encrypted"
+category: Reverse Engineering
+description: |
+  **Author**: `Encrypted`
+
+  I've made a guessing game for you. Can you guess the correct number? You only have 3 tries.
+
+value: 0
+type: dynamic
+extra:
+  initial: 500
+  decay: 20
+  minimum: 100
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+  - agrihack{j4go_b4ng3t_b4ng_r3v3rs3_ny4}
+
+# Tags are used to classify your challenge with topics. You should provide at
+# least one.
+# Can be removed if unused
+# Accepts strings
+tags:
+  - C++
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+  - ./ReverseMe.exe
+  - ./flag-decrypt.py
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
