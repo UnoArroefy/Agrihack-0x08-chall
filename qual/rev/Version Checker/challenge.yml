@@ -8,9 +8,9 @@ category: Reverse Engineering
 description: |
     **Author**: `Encrypted`
 
-So my friend just downloaded an application but its outdated, it says version v2.0 required to use the app but my friend is too lazy to update the app, he asked me to bypass the version checker. I just noticed that the application was coded with C#, it should be easy to reverse a C# based application, but sadly when i tried to reverse it, the application is obfuscated and i couldnt see what is actually going on, but i found a little hint, the code shown as pseudocode. Help me analyze the code and bypass the version checker.
+    So my friend just downloaded an application but its outdated, it says version v2.0 required to use the app but my friend is too lazy to update the app, he asked me to bypass the version checker. I just noticed that the application was coded with C#, it should be easy to reverse a C# based application, but sadly when i tried to reverse it, the application is obfuscated and i couldnt see what is actually going on, but i found a little hint, the code shown as pseudocode. Help me analyze the code and bypass the version checker.
 
-![](https://cdn.discordapp.com/attachments/1025767334901727363/1165904674818379796/image.png?ex=65488c57&is=65361757&hm=1190e3e9c8b6a5366b8cca04a756dd2ce7d8267274bfb621fde703d9a51eb522&)
+    ![](https://cdn.discordapp.com/attachments/1025767334901727363/1165904674818379796/image.png?ex=65488c57&is=65361757&hm=1190e3e9c8b6a5366b8cca04a756dd2ce7d8267274bfb621fde703d9a51eb522&)
 
 Note: `matiin anti virusnya dulu, gak tau kenapa kedetek sebagai virus sehabis diobfuscate`
 
