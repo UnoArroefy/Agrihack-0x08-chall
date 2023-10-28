@@ -9,7 +9,7 @@ description: |
     **Author**: ``Encrypted``
 
     Saya mendapatkan laporan adanya impostor dalam agrinfo, dari laporan tersebut dikabarkan dia tidak terdaftar dalam kemahasiswaan IPB. Dari berita yang beredar dia dikatakan ada di antara mahasiswa Ilmu Komputer. Dia berada di antara kita semua. Cari tahu apakah nama lengkap dia.
-    **Format flag**: ``agrihack0x08{Nama_Lengkap_Orangnya}``
+    **Format flag**: ``agrihack{Nama_Lengkap_Orangnya}``
 
 value: 0
 type: dynamic
@@ -23,7 +23,7 @@ extra:
 # Can be removed if unused
 # Accepts strings or dictionaries
 flags:
-    - agrihack0x08{William_Katelyn_Alfuero}
+    - agrihack{William_Katelyn_Alfuero}
 
 # Tags are used to classify your challenge with topics. You should provide at
 # least one.
