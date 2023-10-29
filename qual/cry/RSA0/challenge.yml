@@ -31,7 +31,7 @@ flags:
 # Can be removed if unused
 # Accepts strings
 tags:
-    - Cryptography
+    - RSA
 
 # Provide paths to files from the same directory that this file is in
 # Accepts strings
