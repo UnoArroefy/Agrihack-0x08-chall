@@ -16,17 +16,15 @@ extra:
     decay: 20
     minimum: 100
 
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+connection_info: https://drive.google.com/file/d/1g7qexGRGtHgAQeN2MvKijsMBywWTTNwA/view?usp=sharing
+
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
 # Can be removed if unused
 # Accepts strings or dictionaries
 flags:
     - agrihack{H3ighT_M0d1FicaTi0n_W1th_H3X}
-# Provide paths to files from the same directory that this file is in
-# Accepts strings
-files:
-    - ./uichan4.png
-
 
 # The state of the challenge.
 # This is visible by default. It takes two values: hidden, visible.
