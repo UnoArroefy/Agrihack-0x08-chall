@@ -11,7 +11,6 @@ def binserEasy():
     b = 128
 
     for _ in range(7):
-        print((a+b)//2)
         try:
             inp = int(input(f"masukkan angka (1 - 128): "))
         except:
@@ -25,7 +24,7 @@ def binserEasy():
         elif inp == (a+b)//2:
             if (b - a) / 2 == 1:
                 print("congrats")
-                print("agrihack{binary_search_made_easy}")
+                print("agrihack{lupa_ngapus_printnya_nahINI_baru_benar}")
                 break
             rand = randint(0, 1)
             if rand:

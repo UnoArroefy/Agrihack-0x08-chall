@@ -25,8 +25,7 @@ connection_info: nc 34.101.135.101 20005
 # Can be removed if unused
 # Accepts strings or dictionaries
 flags:
-    - agrihack{binary_search_made_easy}
-
+    - agrihack{lupa_ngapus_printnya_nahINI_baru_benar}
 
 # The state of the challenge.
 # This is visible by default. It takes two values: hidden, visible.
