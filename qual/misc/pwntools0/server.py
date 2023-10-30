@@ -6,8 +6,8 @@ def main():
     print("Jawab 10000 pertanyaan matematika dibawah untuk mendapat flag", flush=True)
 
     for i in range(10000):
-        a = random.randint(0,255)
-        b = random.randint(0,255)
+        a = random.randint(1,255)
+        b = random.randint(1,255)
         format = f"{a} {random.choice(['-', '+', '%', '*', '//'])} {b}"
         c = eval(format)
         inp = int(input(f"Pertanyaan ke-{i+1}\n" + format + " = "))
