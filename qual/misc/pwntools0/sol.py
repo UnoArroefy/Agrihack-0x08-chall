@@ -1,7 +1,7 @@
 from pwn import *
 
-# r = remote("34.101.135.101", 20003, level='debug')
-r = process(['python3', 'server.py'])
+r = remote("34.101.135.101", 20003)
+# r = process(['python3', 'server.py'])
 
 r.recvline()
 print("he")
