@@ -1,0 +1,45 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "RS Auth"
+author: "k1nomi"
+category: Cryptography
+description: |
+    **Author**: `k1nomi`
+
+    Secrecry through RSA is an easy task. I let my public key be known so that people can send message to me, but I keep my private key secret so that it's only me who can read the messages. What about authentication? Using RSA, how do people prove that a message is, undoubtedly, from me?
+value: 0
+type: dynamic
+extra:
+    initial: 500
+    decay: 20
+    minimum: 100
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+    - agrihack{it5_0nly_m3_wh0_kn0w_my_priv4te_k3y_ther3fore_1ts_m3}
+
+# Tags are used to classify your challenge with topics. You should provide at
+# least one.
+# Can be removed if unused
+# Accepts strings
+tags:
+    - rsa
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - ./chall.py
+    - ./output.txt
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
