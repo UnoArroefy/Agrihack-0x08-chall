@@ -36,7 +36,7 @@ tags:
 # Provide paths to files from the same directory that this file is in
 # Accepts strings
 files:
-  - ./chall.py
+  - ./chal.py
   - ./output.txt
 
 # The state of the challenge.
