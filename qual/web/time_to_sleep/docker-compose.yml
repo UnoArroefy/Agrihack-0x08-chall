@@ -1,0 +1,12 @@
+version: '3'
+services:
+  agrihack:
+    container_name: tts
+    environment:
+      - FLAG_ENV=agrihack{sweet_dr3ams_5}
+    build:
+      context: ./
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "15099:80"
