@@ -4,7 +4,7 @@
 # Required sections
 name: "RSA2"
 author: "bimskuy"
-category: Category
+category: Cryptography
 description: |
     **Author**: `bimskuy`
 
@@ -22,7 +22,7 @@ extra:
     decay: 20
     minimum: 100
 
-connection_info: nc localhost 16007
+connection_info: nc 34.101.135.101 16007
 
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
