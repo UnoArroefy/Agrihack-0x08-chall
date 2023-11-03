@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from Crypto.Util.number import bytes_to_long, getPrime, GCD
 from random import randint, choice
 
