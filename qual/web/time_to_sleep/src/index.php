@@ -70,22 +70,22 @@
 
 
 <?php
-
 $flag = getenv("FLAG_ENV");
 if(isset($_POST['flag']))
 {
-	for($i = 0; $i < strlen($flag); $i++)
+	$input = $_POST['flag'];
+    if ($input === $flag)
+        echo("gg");
+    if (strlen($input) === strlen($flag)){
+        echo("Not flag but i think its similiar..");
+    } else {
+        echo("Wrong...");
+    }
+    for($i = 0; $i < strlen($flag); $i++)
 	{
-		if($_POST['flag'][$i] == $flag[$i]){
-            if ($_POST['flag'] === $flag)
-                die("thats right");
+		if($input[$i] === $flag[$i]){
             sleep(1);
-            error_reporting(E_ERROR | E_PARSE);
-        }
-		else{
-            die("Wrong!");
-        }
-			
+        }	
 	}
 }
 ?>

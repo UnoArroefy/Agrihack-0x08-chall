@@ -3,10 +3,10 @@ services:
   agrihack:
     container_name: tts
     environment:
-      - FLAG_ENV=agrihack{sweet_dr3ams_5}
+      - FLAG_ENV=agrihack{its_time_to_sleep_sweet_dreams_tonight_sleep(1)}
     build:
       context: ./
     volumes:
       - ./src:/var/www/html
     ports:
-      - "15099:80"
+      - "8000:80"
