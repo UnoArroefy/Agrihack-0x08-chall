@@ -1,0 +1,46 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Lupa Akun 1.0"
+author: "Anro"
+category: Reverse Engineering
+description: |
+    **Author**: `Anro`
+    Waduh setelah ia mengganti passwordnya, sekarang Tzursa lupa lagi akun yang dibuatnya!!
+value: 0
+type: dynamic
+extra:
+    initial: 500
+    decay: 20
+    minimum: 100
+
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+    - agrihack{j4n9an_Lupak4n_PW_la9i}
+
+# Tags are used to classify your challenge with topics. You should provide at
+# least one.
+# Can be removed if unused
+# Accepts strings
+# tags:
+    
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - ./lupaakun1.0
+
+requirements:
+    - "Lupa Akun 0.0"
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
