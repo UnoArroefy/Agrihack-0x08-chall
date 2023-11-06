@@ -1,7 +1,7 @@
 FROM php:apache
-RUN apt-get -qq update && \
-  apt-get install whois && \
-  libsocket-getaddrinfo-perl
+RUN apt-get update -qq && \
+    apt-get install -y whois libsocket-getaddrinfo-perl && \
+    apt-get clean
 
 
 COPY src/ /var/www/html/
