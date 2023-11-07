@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>Home | Rune Software</title>
+    <style>
+      #navbar {
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+      }
+
+      #navbar.visible {
+        background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+      }
+
+      .navbarHover {
+        color: white;
+      }
+
+      .navbarHover:hover {
+        color: #d50000;
+        transition: 0.5s;
+      }
+
+      .navbarHoverActive {
+        color: #d50000;
+        transition: 0.5s;
+      }
+
+      .hoverLogo {
+        opacity: 100;
+      }
+
+      .hoverLogo:hover {
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+
+      .justHover:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+        background: linear-gradient(to top left, #ff30306d, #ff4c308d);
+        transform: scaleX(0);
+        transform-origin: center;
+        z-index: -1;
+      }
+
+      .justHover:hover {
+        background: linear-gradient(to top left, #ff30306d, #ff4c308d);
+      }
+
+      .justHover:hover:before {
+        transform: scaleX(1);
+      }
+
+      .downloadButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        height: 2.75rem;
+        padding: 0.75rem 1.5rem;
+        position: relative;
+        border: none;
+        border-radius: 9999px;
+        background: #232e4f;
+        color: #ffffff;
+        font-weight: 600;
+        text-align: center;
+        transition: background 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .downloadButton:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        border-radius: 9999px;
+        transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+        background: linear-gradient(to top left, #ff3030, #ff4c30);
+        transform: scaleX(0);
+        transform-origin: center;
+        z-index: -1;
+      }
+
+      .downloadButton:hover {
+        background: #1e3a8a;
+        transform: scale(1.05);
+      }
+
+      .downloadButton:hover:before {
+        transform: scaleX(1);
+      }
+
+      .Titless {
+        display: inline;
+        background: linear-gradient(to top left, #ff3030, #ff4c30);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-950">
+    <header>
+      <nav class="z-10 w-full fixed" id="navbar">
+        <div class="container">
+          <div
+            class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative"
+          >
+            <input
+              aria-hidden="true"
+              type="checkbox"
+              name="toggle_nav"
+              id="toggle_nav"
+              class="hidden peer"
+            />
+            <div
+              class="relative z-20 w-full flex justify-between lg:w-max md:px-0"
+            >
+              <a href="/" aria-label="logo" class="flex space-x-2 items-center">
+                <img
+                  src="/img/logo.png"
+                  alt="rune-logo"
+                  class="w-32 hoverLogo"
+                />
+              </a>
+
+              <div class="relative flex items-center lg:hidden max-h-10">
+                <label
+                  role="button"
+                  for="toggle_nav"
+                  aria-label="humburger"
+                  id="hamburger"
+                  class="relative p-6 -mr-6"
+                >
+                  <div
+                    aria-hidden="true"
+                    id="line"
+                    class="m-auto h-0.5 w-5 rounded bg-gray-300 transition duration-300"
+                  ></div>
+                  <div
+                    aria-hidden="true"
+                    id="line2"
+                    class="m-auto mt-2 h-0.5 w-5 rounded bg-gray-300 transition duration-300"
+                  ></div>
+                </label>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              class="fixed z-10 inset-0 h-screen w-screen backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden bg-gray-900/70"
+            ></div>
+            <div
+              class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none shadow-none bg-gray-800 border-gray-700"
+            >
+              <div class="text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0">
+                <ul
+                  class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0"
+                >
+                  <li>
+                    <a
+                      href="/"
+                      class="block md:px-4 transition navbarHoverActive"
+                    >
+                      <span>Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="<%= item.downloadLink %>"
+                      target="_blank"
+                      class="block md:px-4 transition navbarHover"
+                    >
+                      <span>Executor</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/scripts"
+                      class="block md:px-4 transition navbarHover"
+                    >
+                      <span>Scripts</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="<%= item.discordLink %>"
+                      target="_blank"
+                      class="block md:px-4 transition navbarHover"
+                    >
+                      <span>Discord</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/login"
+                      class="block md:px-4 transition navbarHover"
+                    >
+                      <span>Login</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="container pt-36">
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20"
+      >
+        <div
+          class="blur-[106px] h-56 bg-gradient-to-br from-blue-700 to-purple-400"
+        ></div>
+        <div
+          class="blur-[106px] animate-pulse h-32 bg-gradient-to-r from-cyan-400 to-indigo-600"
+        ></div>
+      </div>
+      <div
+        class="flex flex-col-reverse md:flex-row gap-4 items-center justify-between"
+      >
+        <div class="text-center md:text-left space-y-8">
+          <div>
+            <div class="flex flex-row items-center gap-2">
+              <div
+                class="h-2 w-2 animate-pulse bg-green-400 rounded-full"
+              ></div>
+              <p class="text-green-400 font-medium">Working!</p>
+            </div>
+            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold text-white">
+              <%= item.title %>
+            </h1>
+          </div>
+          <p class="text-gray-300 text-lg max-w-xl"><%= item.description %></p>
+          <div>
+            <a
+              href="<%= item.downloadLink %>"
+              target="_blank"
+              class="downloadButton"
+            >
+              <span class="relative text-base font-semibold text-white"
+                >Download Now</span
+              >
+            </a>
+          </div>
+        </div>
+        <img
+          src="<%= item.images %>"
+          style="height: 50%; width: 45%"
+          alt="rune icon"
+        />
+      </div>
+      <div class="w-1/4 h-1 bg-gray-500 mx-auto mt-20 md:mt-24 rounded"></div>
+    </section>
+    <section class="container my-20">
+      <div class="text-center space-y-3">
+        <h2 class="text-2xl font-bold text-white md:text-4xl">
+          <span class="Titless">Rune</span> Features
+        </h2>
+        <p class="text-gray-300">
+          Our primary offering, the Rune Scripting Utilities, encompasses
+          numerous features that set it apart.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
+        <div class="pattern-dots-md text-red-600 h-full">
+          <div
+            class="rounded bg-gray-900 justHover p-4 transform h-full md:translate-x-6 md:-translate-y-6"
+          >
+            <div class="flex-grow">
+              <h2 class="text-2xl font-bold mb-3 text-white">
+                <%= item.featuresTitle1 %>
+              </h2>
+              <p class="leading-relaxed text-sm text-justify text-gray-400">
+                <%= item.featuresDescription1 %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pattern-dots-md text-green-600 h-full">
+          <div
+            class="rounded bg-gray-900 justHover p-4 transform h-full md:translate-x-6 md:-translate-y-6"
+          >
+            <div class="flex-grow">
+              <h2 class="text-2xl font-bold mb-3 text-white">
+                <%= item.featuresTitle2 %>
+              </h2>
+              <p class="leading-relaxed text-sm text-justify text-gray-400">
+                <%= item.featuresDescription2 %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pattern-dots-md text-yellow-600 h-full">
+          <div
+            class="rounded bg-gray-900 justHover p-4 transform h-full md:translate-x-6 md:-translate-y-6"
+          >
+            <div class="flex-grow">
+              <h2 class="text-2xl font-bold mb-3 text-white">
+                <%= item.featuresTitle3 %>
+              </h2>
+              <p class="leading-relaxed text-sm text-justify text-gray-400">
+                <%= item.featuresDescription3 %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pattern-dots-md text-cyan-600 h-full">
+          <div
+            class="rounded bg-gray-900 justHover p-4 transform h-full md:translate-x-6 md:-translate-y-6"
+          >
+            <div class="flex-grow">
+              <h2 class="text-2xl font-bold mb-3 text-white">
+                <%= item.featuresTitle4 %>
+              </h2>
+              <p class="leading-relaxed text-sm text-justify text-gray-400">
+                <%= item.featuresDescription4 %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pattern-dots-md text-purple-600 h-full">
+          <div
+            class="rounded bg-gray-900 justHover p-4 transform h-full md:translate-x-6 md:-translate-y-6"
+          >
+            <div class="flex-grow">
+              <h2 class="text-2xl font-bold mb-3 text-white">
+                <%= item.featuresTitle5 %>
+              </h2>
+              <p class="leading-relaxed text-sm text-justify text-gray-400">
+                <%= item.featuresDescription5 %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pattern-dots-md text-orange-600 h-full">
+          <div
+            class="rounded bg-gray-900 justHover p-4 transform h-full md:translate-x-6 md:-translate-y-6"
+          >
+            <div class="flex-grow">
+              <h2 class="text-2xl font-bold mb-3 text-white">
+                <%= item.featuresTitle6 %>
+              </h2>
+              <p class="leading-relaxed text-sm text-justify text-gray-400">
+                <%= item.featuresDescription6 %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container mx-auto py-20">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-white">Showcase</h2>
+        <p class="text-gray-400">Check out our featured video</p>
+      </div>
+      <div class="max-w-4xl mx-auto relative rounded-lg overflow-hidden">
+        <div
+          class="mt-10 rounded-xl overflow-hidden shadow-xl border-2 border-gray-500"
+        >
+          <iframe
+            class="w-full aspect-video"
+            src="<%= item.showcaseLink %>"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="py-28 bg-gray-900 w-full absolute left-0 right-0 text-white space-y-10 mt-24"
+    >
+      <div class="md:text-center container">
+        <h3 class="text-3xl">Rune Software</h3>
+        <a target="_blank" rel="noreferrer noopener">
+          <img
+            src="https://status.pandadevelopment.net/api/badge/1/status?style=flat-square"
+            class="md:mx-auto"
+            alt="uptime status"
+          />
+        </a>
+      </div>
+      <p class="text-gray-500 text-center container">
+        &copy; <%= (new Date()).getFullYear() %> Rune Software & Pelican
+        Development. All rights reserved.
+      </p>
+    </footer>
+    <script>
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("visible");
+        } else {
+          navbar.classList.remove("visible");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .scrollbar {
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #4a90e2 #1e212d;
+      }
+
+      .scrollbar::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #4a90e2;
+        border-radius: 6px;
+      }
+
+      .scrollbar::-webkit-scrollbar-track {
+        background-color: #1e212d;
+      }
+
+      .hoverLogo {
+        opacity: 100;
+      }
+
+      .hoverLogo:hover {
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body
+    class="scrollbar bg-gray-800 text-white grid grid-cols-1 justify-center items-center min-h-screen"
+  >
+    <script>
+      const navbar = document.getElementById("navbar");
+      
+      function confirmLogout() {
+        if (window.confirm("Are you sure you want to logout?")) {
+          document.getElementById("logoutForm").submit();
+        }
+      }
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = "rgba(17, 24, 39, 0.9)";
+        } else {
+            navbar.style.backgroundColor = "transparent";
+        }
+    });
+    </script>
+    <header>
+      <nav class="fixed w-full bg-gray-800 transition duration-300 opacity-90" id="navbar">
+          <div class="container mx-auto p-5">
+              <div class="flex items-center justify-between ">
+                  <a href="#" class="flex items-center space-x-2 hoverLogo">
+                      <img src="/img/logo.png" alt="rune-logo" class="w-32">
+                  </a>
+                  <div class="lg:hidden">
+                      <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer">
+                      <label for="toggle_nav" aria-label="Open menu" class="cursor-pointer">
+                          <div class="w-6 h-6 rounded p-1 relative">
+                              <div class="w-full h-0.5 bg-gray-300 absolute"></div>
+                              <div class="rotate-45 w-full h-0.5 bg-gray-300 absolute"></div>
+                              <div class="rotate-[-45deg] w-full h-0.5 bg-gray-300 absolute"></div>
+                          </div>
+                      </label>
+                  </div>
+                  <div class="hidden lg:flex items-center space-x-4">
+                      <a href="/admin" class="hover:text-red-500 py-2 px-4">Admin Panel</a>
+                      <a href="/admin/scripts" class="hover:text-red-500 py-2 px-4">Scripts panel</a>
+                      <a href="/admin/account-manager" class="hover:text-red-500 py-2 px-4">Account Manager</a>
+                      <form id="logoutForm" action="/logout" method="POST" class="mb-1">
+                        <button
+                          type="button"
+                          class="bg-red-500 hover-bg-red-900 text-white font-bold py-2 px-4 rounded"
+                          onclick="confirmLogout()"
+                        >
+                          Log Out
+                        </button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </nav>
+  </header>
+    <div
+      class="container mx-auto p-10 bg-gray-900 shadow-lg rounded-lg text-white"
+    >
+      <h1 class="text-5xl font-bold mb-6 mt-32 text-center">
+        <span
+          class="bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >Rune</span
+        >
+        Control Panel
+      </h1>
+
+      <% data.forEach(item => { %>
+      <nav class="bg-gray-800 p-4 mt-4 mb-4 rounded">
+        <div class="flex justify-between items-center">
+          <div>
+            <a href="#" aria-label="logo" class="flex space-x-2 items-center">
+              <img src="/img/logo.png" alt="rune-logo" class="w-32" />
+            </a>
+          </div>
+          <ul class="flex space-x-4">
+            <li>
+              <a
+                href="<%= item.downloadLink %>"
+                class="text-white text-xl hover:text-blue-500 transition duration-300"
+                ><strong>Download</strong></a
+              >
+            </li>
+            <li>
+              <a
+                href="<%= item.discordLink %>"
+                class="text-white text-xl hover:text-blue-500 transition duration-300"
+                ><strong>Discord</strong></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div
+        class="mb-4 mt-6 border-2 hover:bg-red-700 transition duration-300 border-gray-800 p-5 rounded"
+      >
+        <label
+          for="title"
+          class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          ><strong>Title</strong>:</label
+        >
+        <p><%= item.title %></p>
+      </div>
+
+      <div
+        class="mb-4 border-2 hover:bg-red-700 transition duration-300 border-gray-800 p-5 rounded"
+      >
+        <label
+          for="description"
+          class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          ><strong>Description:</strong></label
+        >
+        <p><%= item.description %></p>
+      </div>
+
+      <div
+        class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+      >
+        <label
+          for="images"
+          class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          ><strong>Images:</strong></label
+        >
+        <img
+          class="w-7/12 h-6/12 border border-blue-700 rounded hover:border-gray-300 transition duration-300"
+          src="<%= item.images %>"
+          alt="<%= item.images %>"
+        />
+      </div>
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-2 gap-4"
+      >
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresTitle"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Title:</strong></label
+          >
+          <p><%= item.featuresTitle1 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresDescription"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <p><%= item.featuresDescription1 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresTitle"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Title:</strong></label
+          >
+          <p><%= item.featuresTitle2 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresDescription"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <p><%= item.featuresDescription2 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresTitle"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Title:</strong></label
+          >
+          <p><%= item.featuresTitle3 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresDescription"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <p><%= item.featuresDescription3 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresTitle"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Title:</strong></label
+          >
+          <p><%= item.featuresTitle4 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresDescription"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <p><%= item.featuresDescription4 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresTitle"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Title:</strong></label
+          >
+          <p><%= item.featuresTitle5 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresDescription"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <p><%= item.featuresDescription5 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresTitle"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Title:</strong></label
+          >
+          <p><%= item.featuresTitle6 %></p>
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-600 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="featuresDescription"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <p><%= item.featuresDescription6 %></p>
+        </div>
+      </div>
+
+      <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+        <label for="discordLink" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Showcase Link:</strong></label>
+        <iframe
+          class="w-full aspect-video"
+          src="<%= item.showcaseLink %>"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          style="height: 700px"
+        ></iframe>
+      </div>
+
+      <% }); %>
+    </div>
+    <div
+      class="container mx-auto p-10 bg-gray-900 shadow-lg rounded-lg text-white"
+    >
+      <form action="/update" method="POST" id="saveForm">
+        <div
+          class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label for="title" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Title:</strong></label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.title %>"
+          />
+        </div>
+
+        <div
+          class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label for="description" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Description:</strong></label>
+          <textarea
+            id="description"
+            name="description"
+            rows="5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+          >
+<%= item.description %></textarea
+          >
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="images" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Images:</strong></label>
+          <input
+            type="text"
+            id="images"
+            name="images"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.images %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresTitle1" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Features Title:</strong></label>
+          <input
+            type="text"
+            id="featuresTitle1"
+            name="featuresTitle1"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.featuresTitle1 %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresDescription1" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <textarea
+            id="featuresDescription1"
+            name="featuresDescription1"
+            rows="5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+          >
+<%= item.featuresDescription1 %></textarea
+          >
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresTitle2" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Features Title:</strong></label>
+          <input
+            type="text"
+            id="featuresTitle2"
+            name="featuresTitle2"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.featuresTitle2 %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresDescription2" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <textarea
+            id="featuresDescription2"
+            name="featuresDescription2"
+            rows="5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+          >
+<%= item.featuresDescription2 %></textarea
+          >
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresTitle3" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Features Title:</strong></label>
+          <input
+            type="text"
+            id="featuresTitle3"
+            name="featuresTitle3"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.featuresTitle3 %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresDescription3" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <textarea
+            id="featuresDescription3"
+            name="featuresDescription3"
+            rows="5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+          >
+<%= item.featuresDescription3 %></textarea
+          >
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresTitle4" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Features Title:</strong></label>
+          <input
+            type="text"
+            id="featuresTitle4"
+            name="featuresTitle4"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.featuresTitle4 %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresDescription4" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <textarea
+            id="featuresDescription4"
+            name="featuresDescription4"
+            rows="5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+          >
+<%= item.featuresDescription4 %></textarea
+          >
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresTitle5" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Features Title:</strong></label>
+          <input
+            type="text"
+            id="featuresTitle5"
+            name="featuresTitle5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.featuresTitle5 %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresDescription5" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            ><strong>Features Description:</strong></label
+          >
+          <textarea
+            id="featuresDescription5"
+            name="featuresDescription5"
+            rows="5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+          >
+<%= item.featuresDescription5 %></textarea
+          >
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"">
+          <label for="featuresTitle6" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Features Title:</strong></label>
+          <input
+            type="text"
+            id="featuresTitle6"
+            name="featuresTitle6"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.featuresTitle6 %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="featuresDescription6" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            >Features Description:</label
+          >
+          <textarea
+            id="featuresDescription6"
+            name="featuresDescription6"
+            rows="5"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+          >
+<%= item.featuresDescription6 %></textarea
+          >
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="downloadLink" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Download Link:</strong></label>
+          <input
+            type="text"
+            id="downloadLink"
+            name="downloadLink"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.downloadLink %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="discordLink" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Discord Link:</strong></label>
+          <input
+            type="text"
+            id="discordLink"
+            name="discordLink"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.discordLink %>"
+          />
+        </div>
+
+        <div class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded">
+          <label for="showcaseLink" class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"><strong>Showcase Link:</strong></label>
+          <input
+            type="text"
+            id="showcaseLink"
+            name="showcaseLink"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= item.showcaseLink %>"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="bg-blue-500 mt-4 hover:bg-blue-700 transition duration-300 text-white font-bold py-2 px-4 rounded"
+        >
+          Change
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

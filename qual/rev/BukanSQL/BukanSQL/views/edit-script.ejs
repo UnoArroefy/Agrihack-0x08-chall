@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Script Manager | Rune</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="scrollbar bg-gray-800 text-white grid grid-cols-1 justify-center items-center min-h-screen"
+  >
+    <script>
+      function confirmLogout() {
+        if (window.confirm("Are you sure you want to logout?")) {
+          document.getElementById("logoutForm").submit();
+        }
+      }
+
+      function confirmEdit() {
+        if (window.confirm("Are you sure you want to Edit the script?")) {
+          document.getElementById("saveForm").submit();
+        }
+      }
+    </script>
+    <div
+      class="container mx-auto p-10 bg-gray-900 shadow-lg rounded-lg text-white"
+    >
+      <h1 class="text-5xl font-bold mb-6 text-center">
+        <span
+          class="bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >Rune</span
+        >
+        Control Panel
+      </h1>
+      <div class="border-2 border-gray-800 p-5 rounded">
+        <div class="flex justify-between">
+          <a
+            href="/admin"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded"
+          >
+            Back to Admin Panel
+          </a>
+          <form id="logoutForm" action="/logout" method="POST" class="mb-4">
+            <button
+              type="button"
+              class="bg-red-500 hover-bg-red-900 text-white font-bold py-2 px-4 rounded"
+              onclick="confirmLogout()"
+            >
+              Log Out
+            </button>
+          </form>
+        </div>
+      </div>
+      <form
+        action="/admin/scripts/edit/<%= script._id %>"
+        method="POST"
+        id="saveForm"
+      >
+        <div
+          class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="title"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >
+            <strong>Title:</strong>
+          </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= script.title %>"
+          />
+        </div>
+        <div
+          class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="description"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >
+            <strong>Description:</strong>
+          </label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= script.description %>"
+          />
+        </div>
+        <div
+          class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="images"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >
+            <strong>Images:</strong>
+          </label>
+          <input
+            type="text"
+            id="images"
+            name="images"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= script.images %>"
+          />
+        </div>
+        <div
+          class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="downloadLink"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >
+            <strong>Download Link:</strong>
+          </label>
+          <input
+            type="text"
+            id="downloadLink"
+            name="downloadLink"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= script.downloadLink %>"
+          />
+        </div>
+        <div
+          class="mb-4 border-2 hover:bg-blue-800 transition duration-300 border-gray-800 p-5 rounded"
+        >
+          <label
+            for="discordLink"
+            class="block mb-1 text-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >
+            <strong>Discord Link:</strong>
+          </label>
+          <input
+            type="text"
+            id="discordLink"
+            name="discordLink"
+            class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg"
+            value="<%= script.discordLink %>"
+          />
+        </div>
+        <button
+          type="button"
+          class="bg-green-500 hover-bg-green-900 text-white font-bold py-2 px-4 rounded"
+          onclick="confirmEdit()"
+        >
+          Update
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

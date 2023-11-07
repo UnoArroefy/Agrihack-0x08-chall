@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .justHover:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+        background: linear-gradient(to top left, #ff30306d, #ff4c308d);
+        transform: scaleX(0);
+        transform-origin: center;
+        z-index: -1;
+      }
+
+      .justHover:hover {
+        background: linear-gradient(to top left, #ff30306d, #ff4c308d);
+      }
+
+      .justHover:hover:before {
+        transform: scaleX(1);
+      }
+
+      .downloadButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        height: 2.75rem;
+        padding: 0.75rem 1.5rem;
+        position: relative;
+        border: none;
+        border-radius: 9999px;
+        background: #232e4f;
+        color: #ffffff;
+        font-weight: 600;
+        text-align: center;
+        transition: background 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .downloadButton:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        border-radius: 9999px;
+        transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+        background: linear-gradient(to top left, #0b0b0b, #232323);
+        transform: scaleX(0);
+        transform-origin: center;
+        z-index: -1;
+      }
+
+      .downloadButton:hover {
+        background: #1e3a8a;
+        transform: scale(1.05);
+      }
+
+      .downloadButton:hover:before {
+        transform: scaleX(1);
+      }
+
+      .Titless {
+        display: inline;
+        background: linear-gradient(to top left, #ff3030, #ff4c30);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .page-navigation {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+        margin-left: 20px;
+        margin-right: 0;
+      }
+      
+      .pagination-link {
+        background-color: #232e4f;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      .pagination-link:hover {
+        transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+        background: linear-gradient(to top left, #ff30306d, #ff4c308d);
+      }
+
+      .scrollbar {
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #4a90e2 #1e212d;
+      }
+
+      .scrollbar::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #4a90e2;
+        border-radius: 6px;
+      }
+
+      .scrollbar::-webkit-scrollbar-track {
+        background-color: #1e212d;
+      }
+
+      .discordbutton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        height: 2.75rem;
+        padding: 0.75rem 1.5rem;
+        position: relative;
+        border: none;
+        border-radius: 9999px;
+        background: #002db6;
+        color: #ffffff;
+        font-weight: 600;
+        text-align: center;
+        transition: background 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .discordbutton:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        border-radius: 9999px;
+        transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+        background: linear-gradient(to top left, #0b0b0b, #232323);
+        transform: scaleX(0);
+        transform-origin: center;
+        z-index: -1;
+      }
+
+      .discordbutton:hover {
+        background: #1e3a8a;
+        transform: scale(1.05);
+      }
+
+      .discordbutton:before {
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body
+    class=" scrollbar bg-gray-900 text-white flex justify-center items-center min-h-screen"
+  >
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("search");
+        const searchButton = document.getElementById("searchButton");
+        const currentPage = <%= currentPage %>;
+        const totalPages = <%= totalPages %>;
+        const previousButton = document.getElementById("previousButton");
+        const nextButton = document.getElementById("nextButton");
+    
+        let searchTerm = "";
+        
+        function performSearch() {
+          searchTerm = searchInput.value.toLowerCase();
+          window.location.href = `/admin/scripts?q=${searchTerm}`;
+        }
+    
+        searchInput.addEventListener("input", () => {
+          searchTerm = searchInput.value.toLowerCase();
+        });
+    
+        searchInput.addEventListener("keyup", (event) => {
+          if (event.key === "Enter") {
+            performSearch();
+          }
+        });
+    
+        if (currentPage === 1) {
+          previousButton.classList.add("disabled");
+          previousButton.removeAttribute("href");
+        }
+    
+        if (currentPage === totalPages) {
+          nextButton.classList.add("disabled");
+          nextButton.removeAttribute("href");
+        }
+      });
+
+      function confirmLogout() {
+        if (window.confirm("Are you sure you want to logout?")) {
+          document.getElementById("logoutForm").submit();
+        }
+      }
+    </script>
+    <div
+      class="container mx-auto p-8 bg-gray-800 shadow-lg rounded-lg text-white"
+    >
+    <div
+      class="container mx-auto p-10 bg-gray-900 shadow-lg rounded-lg text-white"
+    >
+      <h1 class="text-5xl font-bold mb-6 text-center">
+        <span
+          class="bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >Rune</span
+        >
+        Control Panel
+      </h1>
+      <div class="border-2 border-gray-800 p-5 rounded">
+        <div class="flex justify-between">
+          <a
+            href="/admin"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded"
+          >
+            Back to Admin Panel
+          </a>
+          <a
+            href="/admin/scripts/clear-scripts-data"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-4 rounded"
+          >
+            Delete All Scripts
+          </a>
+          <form id="logoutForm" action="/logout" method="POST" class="mb-4">
+            <button
+              type="button"
+              class="bg-red-500 hover-bg-red-900 text-white font-bold py-2 px-4 rounded"
+              onclick="confirmLogout()"
+            >
+              Log Out
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+      <section class="container pt-5 pb-24">
+        <div class="mx-auto mt-10 container pt-24 pb-14 flex items-center justify-center">
+          <input type="text" id="search" placeholder="Search..." class="py-2 px-3 w-64 rounded-md bg-gray-900 text-white placeholder-gray-500 focus:outline-none mr-6">
+        </div>   
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+          <% data.forEach(item => { %>
+          <div class="pattern-dots-md text-red-600 h-full">
+            <div
+              class="rounded bg-gray-900 justHover p-4 transform h-full md:translate-x-6 md:-translate-y-6"
+            >
+              <div class="flex-grow">
+                <div class="border border-gray-700 rounded p-2">
+                  <img src="https://cdn.discordapp.com/attachments/1159275513576169554/1169806552295817306/image.png?ex=6556be40&is=65444940&hm=90f5f11e08af994f70c04def97aca227e6bf0cb680331ebd639eab5d95a9264c&" />
+                </div>              
+                <h2 class="text-2xl font-bold mb-3 mt-4 text-white">
+                  <%= item.title %>
+                </h2>
+                <p class="leading-relaxed text-sm text-justify" style="word-wrap: break-word; max-width: 100%;">
+                  <span class="text-gray-400"><strong>Author:</strong></span>
+                  <span class="text-red-400"><%= item.user ? item.user.name : 'Unknown' %></span>
+                </p>
+                <p class="leading-relaxed text-sm text-justify text-gray-400" style="word-wrap: break-word; max-width: 100%;">
+                  <%= item.description %>
+                </p>
+              </div>
+              <div class="mt-5">
+                <a
+                  href="<%= item.downloadLink %>"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="downloadButton"
+                >
+                  Download
+                </a>
+              </div>
+              <div class="mt-5">
+                <a
+                  href="<%= item.discordLink %>"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="discordbutton"
+                >
+                  Discord
+                </a>
+              </div>
+              <div class="flex justify-between items-center mt-6">
+                <a href="/admin/scripts/edit/<%= item._id %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105">
+                  Edit
+                </a>
+                <a href="/admin/scripts/delete/<%= item._id %>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </section>
+      <section class="container pt-6 pb-24">
+        <div class="page-navigation">
+          <a href="?page=<%= currentPage - 1 %><%= searchTerm ? `&q=${searchTerm}` : '' %>"
+             class="pagination-link" id="previousButton">Previous</a>
+          <a href="?page=<%= currentPage + 1 %><%= searchTerm ? `&q=${searchTerm}` : '' %>"
+             class="pagination-link" id="nextButton">Next</a>
+        </div>
+      </section>  
+    </div>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>Login | Rune Software</title>
+    <style>
+      .hoverLogo {
+        opacity: 100;
+      }
+
+      .hoverLogo:hover {
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+
+      .navbarHover {
+        color: white;
+      }
+
+      .navbarHover:hover {
+        color: #d50000;
+        transition: 0.5s;
+      }
+
+      .navbarHoverActive {
+        color: #d50000;
+        transition: 0.5s;
+      }
+
+      .loginHover {
+        background-color: white;
+        transition: background 0.3s;
+      }
+
+      .loginHover:hover {
+        background: linear-gradient(to top left, #e44a4a, #ff0a0a);
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-950">
+    <header>
+      <nav class="fixed top-0 w-full bg-gray-900 z-50">
+        <div class="container">
+          <div
+            class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative"
+          >
+            <input
+              aria-hidden="true"
+              type="checkbox"
+              name="toggle_nav"
+              id="toggle_nav"
+              class="hidden peer"
+            />
+            <div
+              class="relative z-20 w-full flex justify-between lg:w-max md:px-0"
+            >
+              <a href="/" aria-label="logo" class="flex space-x-2 items-center">
+                <img
+                  src="/img/logo.png"
+                  alt="rune-logo"
+                  class="w-32 hoverLogo"
+                />
+              </a>
+
+              <div class="relative flex items-center lg:hidden max-h-10">
+                <label
+                  role="button"
+                  for="toggle_nav"
+                  aria-label="humburger"
+                  id="hamburger"
+                  class="relative p-6 -mr-6"
+                >
+                  <div
+                    aria-hidden="true"
+                    id="line"
+                    class="m-auto h-0.5 w-5 rounded bg-gray-300 transition duration-300"
+                  ></div>
+                  <div
+                    aria-hidden="true"
+                    id="line2"
+                    class="m-auto mt-2 h-0.5 w-5 rounded bg-gray-300 transition duration-300"
+                  ></div>
+                </label>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              class="fixed z-10 inset-0 h-screen w-screen backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden bg-gray-900/70"
+            ></div>
+            <div
+              class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none shadow-none bg-gray-800 border-gray-700"
+            >
+              <div class="text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0">
+                <ul
+                  class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0"
+                >
+                  <li>
+                    <a href="/" class="block md:px-4 navbarHover">
+                      <span>Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/scripts" class="block md:px-4 navbarHover">
+                      <span>Scripts</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://status.pandadevelopment.net/status/pandakeysystem"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="block md:px-4 navbarHover"
+                    >
+                      <span>Discord</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/login"
+                      class="block md:px-4 transition navbarHoverActive"
+                    >
+                      <span>Login</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div
+      class="min-h-screen flex items-center justify-center bg-gray-950 text-white"
+    >
+      <div class="bg-gray-900 p-8 rounded shadow-lg w-96">
+        <h1 class="text-3xl font-semibold text-center text-red-500 mb-4">
+          Register
+        </h1>
+        <form action="/register" method="post">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-300">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="EncryptedGay"
+              class="w-full px-4 text-center py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="block text-gray-300">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Password123"
+              class="w-full px-4 py-2 text-center rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="confirm_password" class="block text-gray-300"
+              >Confirm Password</label
+            >
+            <input
+              id="confirm_password"
+              name="confirm_password"
+              type="password"
+              placeholder="Password123"
+              class="w-full px-4 py-2 text-center rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-white text-gray-800 h-11 px-5 rounded-lg font-semibold loginHover"
+          >
+            Register
+          </button>
+        </form>
+        <div class="mt-4 text-center">
+          <p>
+            Already have an account?
+            <a href="/login" class="text-red-500 cursor-pointer"
+              >Click here for Login</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="py-28 bg-gray-900 w-full absolute left-0 right-0 text-white space-y-10 mt-24"
+    >
+      <div class="md:text-center container">
+        <h3 class="text-3xl">Rune Software</h3>
+        <a target="_blank" rel="noreferrer noopener">
+          <img
+            src="https://status.pandadevelopment.net/api/badge/1/status?style=flat-square"
+            class="md:mx-auto"
+            alt="uptime status"
+          />
+        </a>
+      </div>
+      <p class="text-gray-500 text-center container">
+        &copy; <%= (new Date()).getFullYear() %> Rune Software. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      const header = document.querySelector("header");
+      const offset = header.offsetHeight;
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > offset) {
+          header.classList.add("bg-gray-800", "shadow-md");
+        } else {
+          header.classList.remove("bg-gray-800", "shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>

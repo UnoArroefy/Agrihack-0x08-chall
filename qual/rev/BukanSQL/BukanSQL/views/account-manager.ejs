@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Account Manager | Rune</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="scrollbar bg-gray-800 text-white grid grid-cols-1 justify-center items-center min-h-screen"
+  >
+    <script>
+      function confirmLogout() {
+        if (window.confirm("Are you sure you want to logout?")) {
+          document.getElementById("logoutForm").submit();
+        }
+      }
+    </script>
+    <div
+      class="container mx-auto p-10 bg-gray-900 shadow-lg rounded-lg text-white"
+    >
+      <h1 class="text-5xl font-bold mb-6 text-center">
+        <span
+          class="bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+          >Rune</span
+        >
+        Control Panel
+      </h1>
+      <div class="border-2 border-gray-800 p-5 rounded">
+        <div class="flex justify-between">
+          <a
+            href="/admin"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded"
+          >
+            Back to Admin Panel
+          </a>
+          <form id="logoutForm" action="/logout" method="POST" class="mb-4">
+            <button
+              type="button"
+              class="bg-red-500 hover-bg-red-900 text-white font-bold py-2 px-4 rounded"
+              onclick="confirmLogout()"
+            >
+              Log Out
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <% users.forEach(user => { %>
+      <div class="mb-4">
+        <h2 class="text-3xl font-bold mb-6 text-center">
+          <span
+            class="bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+            >User</span
+          >
+          Information
+        </h2>
+        <div class="border-2 border-gray-800 p-5 rounded">
+          <p class="text-3xl font-bold mb-6 text-left">
+            <span
+              class="bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+              >Name: </span
+            ><%= user.name %>
+          </p>
+          <p class="text-3xl font-bold mb-6 text-left">
+            <span
+              class="bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 text-transparent bg-clip-text"
+              >Password: </span
+            ><%= user.password %>
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-between items-center">
+        <a
+          href="/admin/account-manager/edit/<%= user._id %>"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Edit User
+        </a>
+        <a
+          href="/admin/account-manager/delete/<%= user._id %>"
+          class="bg-red-500 hover-bg-red-900 text-white font-bold py-2 px-4 rounded"
+        >
+          Delete User
+        </a>
+      </div>
+      <% }); %>
+      <div class="mb-4">
+        <h2 class="text-3xl font-bold mb-6 text-center">
+          <span
+            class="bg-gradient-to-r from-red-500 via-red-500 to-yellow-500 text-transparent bg-clip-text"
+            >Delete</span
+          >
+          All Users
+        </h2>
+      </div>
+        <a
+          href="/admin/account-manager/delete-all"
+          class="bg-red-500 hover-bg-red-900 text-white font-bold py-2 px-4 rounded"
+        >
+          Delete All users
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
