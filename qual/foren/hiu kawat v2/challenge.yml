@@ -21,7 +21,7 @@ extra:
 # Can be removed if unused
 # Accepts strings or dictionaries
 flags:
-    - agrihack{exporting_files_transferred_through_the_wire}
+    - agrihack{exporting_files_trransfered_through_the_wire}
 
 # Tags are used to classify your challenge with topics. You should provide at
 # least one.
