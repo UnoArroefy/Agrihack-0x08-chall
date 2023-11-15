@@ -11,7 +11,7 @@ You're the person in charge of managing the computer systems in the company. The
 
 ### Flag
 
-`agrihack{exporting_files_transferred_through_the_wire}`
+`agrihack{exporting_files_trransferred_through_the_wire}`
 
 ### Proof of Concept
 - buka file menggunakan Wireshark
