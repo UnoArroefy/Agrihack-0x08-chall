@@ -1,0 +1,10 @@
+version: '3'
+services:
+  cry:
+    container_name: our-secret
+    network_mode: bridge
+    restart: always
+    build: .
+    ports:
+      - "16001:8000"
+    read_only: True
