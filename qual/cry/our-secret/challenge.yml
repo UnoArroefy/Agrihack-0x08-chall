@@ -11,14 +11,15 @@ description: |
     Bolehkah kita berbagi rahasia secara Diffie-Hellman 😳?
 
     https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange
-
-    `nc xx.xxx.xxx.xx xxxx`
 value: 0
 type: dynamic
 extra:
     initial: 500
     decay: 20
     minimum: 100
+
+
+connection_info: nc 34.101.135.101 16020
 
 # Flags specify answers that your challenge use. You should generally provide
 # at least one.
@@ -33,6 +34,7 @@ flags:
 # Accepts strings
 tags:
     - Diffie-Hellman
+    - AES
 
 # Provide paths to files from the same directory that this file is in
 # Accepts strings

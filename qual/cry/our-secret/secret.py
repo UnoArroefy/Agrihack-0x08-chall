@@ -1,0 +1,1 @@
+flag = b'agrihack{bay4ngk4n_b1sa_b3rtuk4r_k3y_t4np4_h4rus_k3t3muan_l4ng5ung_:o}'

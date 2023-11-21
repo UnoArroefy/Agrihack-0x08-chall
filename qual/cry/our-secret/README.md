@@ -8,8 +8,6 @@ Bolehkah kita berbagi rahasia secara Diffie-Hellman 😳?
 
 https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange
 
-`nc xx.xxx.xxx.xx xxxx`
-
 ## Attachments
 - `server.py`
 

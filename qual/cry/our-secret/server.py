@@ -1,12 +1,12 @@
+#!/usr/bin/env python3
+
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Util.number import long_to_bytes
 import random
 import hashlib
 import os
-
-
-flag = b'agrihack{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}'
+from secret import flag
 
 def encrypt(msg, shared_secret):
 	# derive key
