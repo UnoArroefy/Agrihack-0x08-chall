@@ -37,6 +37,11 @@ A = pow(g,a,p)
 
 print(f"Alice: A = {A}")
 A_tamper = int(input("Alice (send to Bob): A = "))
+try:
+	assert A_tamper in range(1000,p-2)
+except:
+	print("Bob: I think your key is vulnerable.")
+	exit(1)
 
 # BOB SIDE: generate key
 b = random.getrandbits(1530)
@@ -44,6 +49,11 @@ B = pow(g,b,p)
 
 print(f"Bob: B = {B}")
 B_tamper = int(input("Bob (send to Alice): B = "))
+try:
+	assert B_tamper in range(1000,p-2)
+except:
+	print("Alice: I think your key is vulnerable.")
+	exit(1)
 
 # ALICE SIDE: calculate shared secret
 ALICE_secret = pow(B_tamper,a,p)
