@@ -21,6 +21,8 @@ services:
       context: ./flag
     volumes:
       - ./flag/src:/app
+    ports:  
+      - "80:5000"
     networks:
       internal_network:
           ipv4_address: 10.10.0.5
