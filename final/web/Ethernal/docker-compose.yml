@@ -20,13 +20,13 @@ services:
       - ./flag/src:/app
     ports:
       - "15014:5000" 
-    networks:
-      internal_network:
-          ipv4_address: 172.29.0.5
+#     networks:
+#       internal_network:
+#           ipv4_address: 172.29.0.5
 
-networks:
-  internal_network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.29.0.0/16
+# networks:
+#   internal_network:
+#     driver: bridge
+#     ipam:
+#       config:
+#         - subnet: 172.29.0.0/16
