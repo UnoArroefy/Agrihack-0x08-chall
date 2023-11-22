@@ -10,6 +10,9 @@ services:
       - ./ethernal/src:/var/www/html
     ports:  
       - "15013:80"
+    networks:
+      internal_network:
+          ipv4_address: 10.10.0.4
 
   flag:
     container_name: ethernal_flag
@@ -18,16 +21,13 @@ services:
       context: ./flag
     volumes:
       - ./flag/src:/app
-    ports:
-      - "15014:5000" 
     networks:
       internal_network:
-          ipv4_address: 172.33.0.5
+          ipv4_address: 10.10.0.5
 
 networks:
   internal_network:
     driver: bridge
     ipam:
-      driver: default
       config:
-        - subnet: 172.33.0.0/16
+        - subnet: 10.10.0.0/16
