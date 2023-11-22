@@ -22,7 +22,7 @@
         
         <div class="mt-4">
         <?php
-        $blacklist = ["12a7.0.0.1", "localhsost"];
+        $blacklist = ["10.10", "10.10.0.5", "127.0.0.1", "127.0"];
         $issafe = 1;
 
         if (isset($_POST['submit'])) {
@@ -37,8 +37,6 @@
                     $result = checkService($host);
                 }
             }
-            // echo $result ? 'Service aktif' : 'Service tidak aktif';
-            // echo '<div class="alert ' . ($result ? 'alert-success' : 'alert-danger') . '">';
             echo '<div class="alert ' . ($result ? 'alert-success' : 'alert-danger') . '">';
             echo htmlspecialchars($result);
             echo '</div>';
@@ -63,8 +61,6 @@ function checkService($host)
     $statusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
-    // Jika status code 200, service dianggap aktif
-    // return $statusCode == 200;
     return $result;
 }
 ?>
