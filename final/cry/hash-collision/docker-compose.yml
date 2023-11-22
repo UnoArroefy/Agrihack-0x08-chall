@@ -1,0 +1,10 @@
+version: '3'
+services:
+  cry:
+    container_name: hash-collision
+    network_mode: bridge
+    restart: always
+    build: .
+    ports:
+      - "16022:16022"
+    read_only: True
