@@ -1,0 +1,11 @@
+version: '3'
+services:
+    ret2win3:
+        image: ret2win3
+        build: src/
+        container_name: ret2win3
+        network_mode: bridge
+        restart: always
+        ports:
+            - "19005:1470"
+        read_only: true

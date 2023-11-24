@@ -1,0 +1,11 @@
+version: '3'
+services:
+    format_string:
+        image: format_string
+        build: src/
+        container_name: format_string
+        network_mode: bridge
+        restart: always
+        ports:
+            - "19002:1470"
+        read_only: true

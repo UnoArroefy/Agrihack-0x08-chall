@@ -1,0 +1,1 @@
+agrihack{ingat_string_itu_diakhiri_dengan_nullbyte}

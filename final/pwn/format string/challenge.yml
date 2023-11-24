@@ -1,0 +1,40 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "format string"
+author: "zran"
+category: PWN
+description: |
+    **Author**: `zran`
+
+    Pernah dengar format string vulnerability?
+    (cara ke-2 untuk ngeleak sesuatu)
+value: 0
+type: dynamic
+extra:
+    initial: 500
+    decay: 20
+    minimum: 100
+
+connection_info: nc 34.101.135.101 19002
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+    - agrihack{format_string_vulnerability_bisa_buat_ngeleak}
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+    - dist/format_string
+
+# The state of the challenge.
+# This is visible by default. It takes two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

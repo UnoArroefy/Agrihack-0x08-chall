@@ -1,0 +1,11 @@
+version: '3'
+services:
+    bof4:
+        image: bof4
+        build: src/
+        container_name: bof4
+        network_mode: bridge
+        restart: always
+        ports:
+            - "19001:1470"
+        read_only: true
