@@ -21,4 +21,4 @@ password attachment = pliskerjainsoalini
 - Menggunakan plugin cmdscan, diketahui ada 2 file dalam folder secret
 - Menggunakan filescan, terdapat 2 gambar LordZantos dan AnotherLordZantos
 - Untuk file AnotherLordZantos, jalankan foremost dan didapatkan file png yang berisi flag bagian pertama
-- Untuk file LordZantos, pakai tool zsteg (atau tools apa saja yang bisa LSB)
+- Untuk file LordZantos, pakai tool zsteg (atau tools apa saja yang bisa LSB) dan didapatkan flag bagian kedua
