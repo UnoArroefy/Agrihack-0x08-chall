@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
 from Crypto.Util.number import getPrime, GCD, bytes_to_long
 from secrets import choice
