@@ -1,14 +1,13 @@
 FROM python:3.10-slim-buster
 
-RUN groupadd -r nobodys
+RUN groupadd -r nobody
 WORKDIR /app    
 COPY ./app /app
 RUN pip3 install  --ignore-installed -r requirements.txt
 
 COPY flag /
 RUN chmod -R 747 /app
-RUN groupadd -g 65534 nobody && \
-    chown -R root:nobody /flag
+RUN chown -R root:nobody /flag
 RUN chmod 444 /flag
 
 USER nobody
