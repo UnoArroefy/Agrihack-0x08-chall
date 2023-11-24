@@ -5,9 +5,11 @@
 **Author: kelapacuyy x glitchgoo**
 
 Lord Zantos adalah seorang hacker handal, suatu hari dia mencoba meretas komputerku dan meninggalkan beberapa jejak. Untungnya aku berhasil mendump memory komputerku sebelum benar-benar diambil alih olehnya. Bantu aku menemukan file yang dia taruh di komputerku.
+
 P.S. sepertinya dia melakukan aksinya melalui command prompt
 
 [Attachment](https://filetransfer.io/data-package/NPIjFz3U#link)
+
 password attachment = pliskerjainsoalini
 
 ### Flag
