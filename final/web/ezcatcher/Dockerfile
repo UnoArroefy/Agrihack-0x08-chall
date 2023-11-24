@@ -5,10 +5,11 @@ WORKDIR /app
 COPY ./app /app
 RUN pip3 install  --ignore-installed -r requirements.txt
 
-COPY flag /flag-12893u9n1e981.txt
+COPY flag /
 RUN chmod -R 747 /app
-RUN chown -R root:nobody /flag-12893u9n1e981.txt
-RUN chmod 444 /flag-12893u9n1e981.txt
+RUN groupadd -g 65534 nobody && \
+    chown -R root:nobody /flag
+RUN chmod 444 /flag
 
 USER nobody
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
