@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 EXPOSE 5000
 
@@ -6,25 +6,28 @@ ARG binary
 ENV binary=${binary}
 
 # update
-RUN apt update && apt upgrade -y && apt update --fix-missing
-RUN apt-get install python3 socat -y
-RUN apt-get install curl -y
-RUN apt-get install pycryptodome -y
+RUN apt-get update && apt-get upgrade -y && apt-get update --fix-missing
+RUN apt-get install -y python3 socat
+RUN apt-get install -y python3-pip
+RUN python3 -m pip install pycryptodome
 
 
 # copy file
 RUN mkdir /challs
-COPY $binary /challs/$binary
 COPY server.py /challs/server.py
 COPY flag.txt /challs/flag.txt
+
 WORKDIR /challs
 
+
 # securing flag
-RUN chown -R 755 /challs/
-RUN chmod +x /challs/$binary
-# Securing environment
-RUN chmod 700 /usr/bin/* /bin/* /tmp /dev/shm
-RUN chmod 755 /usr/bin/env /usr/bin/python3 /bin/dash /bin/bash /bin/sh /bin/cat /usr/bin/curl /usr/bin/groups /usr/bin/id /bin/ls
+RUN chmod -R 755 /challs/
+RUN chmod 744 /challs/flag.txt
+
+
+# securing environment
+RUN chmod 700  /tmp /dev/shm
+RUN chmod 755 /usr/bin/env /usr/bin/python3 /bin/dash /bin/bash /bin/sh /bin/cat /usr/bin/groups /usr/bin/id /bin/ls
 
 
 # Run Program
